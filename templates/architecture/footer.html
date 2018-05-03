@@ -1,0 +1,34 @@
+<div class="navbar navbar-inverse navbar-fixed-bottom" id="main-footer" style="position: relative;">
+    <div class="container">
+        <footer>
+            <div class="icons-div">
+                <div class="icon-img">
+                    <a href="https://www.facebook.com/MPowered.UofM" target="_blank">
+                        <img src="/static/img/facebook-white.png" class="img-responsive" id="facebook-icon">
+                    </a>
+                </div>
+                <div class="icon-img">
+                    <a href="https://www.twitter.com/MPowered" target="_blank">
+                        <img src="/static/img/instagram-white.png" class="img-responsive" id="twitter-icon">
+                    </a>
+                </div>
+            </div>
+            <p>&copy; Copyright 2018 Northern Michigan Supercar Experience, LLC., All Rights Reserved.</p>
+        </footer>
+    </div>
+</div>
+
+<script type="text/javascript">
+
+    $(document).ready(function() {
+
+        $('#facebook-icon').hover(
+            function () { $(this).attr('src', "/static/img/facebook-yellow.png"); },
+            function () { $(this).attr('src', "/static/img/facebook-white.png"); }
+        );
+        $('#twitter-icon').hover(
+            function () { $(this).attr('src', "/static/img/instagram-yellow.png"); },
+            function () { $(this).attr('src', "/static/img/instagram-white.png"); }
+        );
+    });
+</script>

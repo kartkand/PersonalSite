@@ -1,0 +1,12 @@
+#!/bin/bash
+# run from root directory
+
+# Stop on errors
+set -e
+
+# Set FLASK_DEBUG and FLASK_APP environment variables
+export FLASK_DEBUG=True
+export FLASK_APP=app.py
+
+# Run the development server on port 8000
+flask run --host 0.0.0.0 --port 8000
