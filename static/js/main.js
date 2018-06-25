@@ -400,7 +400,7 @@ function init(){
     }
 
     function openLoupeView(snap) {
-        document.getElementById("navbar").style.display = "none";
+        document.getElementById("navbarID").style.display = "none";
         _loupeIsTransitioning = true;
         setCounts();
         _$loupeContainer.fadeIn(0);
@@ -618,7 +618,7 @@ function init(){
     }
 
     function closeLoupeView(e) {
-        document.getElementById("navbar").style.display = "block";
+        document.getElementById("navbarID").style.display = "block";
         e.preventDefault();
         e.stopPropagation();
         $(window).off(

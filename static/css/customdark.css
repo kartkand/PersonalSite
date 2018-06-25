@@ -4,8 +4,8 @@ body, html {
   height: 100%;
   font-family: Apercu,"Source Sans Pro",system,system-ui,-apple-system,BlinkMacSystemFont,Roboto,Helvetica,Arial,sans-serif;
   line-height: 1.5;
-  background-color: #c1c8e4;
-  color: #000;
+  background-color: #191e28;
+  color: #afafbf; dark theme
 }
 
 h1, h2, h3, h4, h5, h6{
@@ -17,11 +17,11 @@ p {
 }
 
 .main_link_white {
-  color: #5680e9;
+  color: white;
 }
 
 .main_link_blue {
-  color: #8860d0;
+  color: #007bff;
 }
 
 .main_link {
@@ -33,16 +33,16 @@ p {
 }
 
 strong {
-  color: black;
+  color: white;
 }
 
 .section_header {
-  color: #5680e9;
+  color: #007bff;
   text-align: right;
 }
 
 .experience_name {
-  color: #8860d0;
+  color: white;
   font-weight: bold;
 }
 
@@ -51,7 +51,7 @@ strong {
 }
 
 .skills_label {
-  color: #8860d0;
+  color: white;
 }
 
 .quote {
@@ -151,7 +151,7 @@ a.btn-social,
 .btn-social
 {
     border-radius: 50%;
-    color: #000 !important;
+    color: #ffffff !important;
     display: inline-block;
     height: 54px;
     line-height: 54px;
@@ -177,7 +177,7 @@ a.btn-social,
 }
 .btn-social:hover,.btn-social:focus
 {
-    color: #000;
+    color: #fff;
     outline: none;
     text-decoration: none;
 }

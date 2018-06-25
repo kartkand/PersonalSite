@@ -2,6 +2,8 @@ from flask import Flask, render_template, send_file
 from os.path import join, dirname, realpath
 app = Flask(__name__)
 
+app.debug = True
+
 
 @app.route('/')
 def index_page():
@@ -25,6 +27,16 @@ def photos_page():
 
 @app.route('/resume.pdf')
 def show_static_pdf():
+    path = join(dirname(realpath(__file__)), 'static/resume.pdf')
+    return send_file(path, attachment_filename='resume.pdf')
+
+
+# @app.route('/resume/')
+# def resume_page():
+#     return render_template('resume.html')
+
+@app.route('/resume/')
+def resume_page():
     path = join(dirname(realpath(__file__)), 'static/resume.pdf')
     return send_file(path, attachment_filename='resume.pdf')
 
