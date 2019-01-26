@@ -1,11 +1,9 @@
 @import url("//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css");
 
 body, html {
-  height: 100%;
   font-family: Apercu,"Source Sans Pro",system,system-ui,-apple-system,BlinkMacSystemFont,Roboto,Helvetica,Arial,sans-serif;
   line-height: 1.5;
-  background-color: #c1c8e4;
-  color: #000;
+  background-color: white;
 }
 
 h1, h2, h3, h4, h5, h6{
@@ -142,7 +140,6 @@ strong {
     .hero{
       width: 100%;
       position: relative;
-      max-height: 100%;
       overflow: hidden;
     }
     .hero-image{
@@ -156,7 +153,6 @@ strong {
     .hero{
       width: 100%;
       position: relative;
-      max-height: 100%;
     }
     .hero-image{
       width: 100%;
@@ -294,3 +290,34 @@ a.btn-social,
 {
     background-color: #6bd079;
 }
+
+
+
+
+
+
+
+html {
+  /* Never get smaller than this */
+  font-size: 6px;
+}
+
+@media (min-width:600px) {
+  html {
+    font-size: 8px;
+  }
+}
+
+@media (min-width:800px) {
+  html {
+    font-size: 10px;
+  }
+}
+
+@media (min-width:1000px) {
+  html {
+    /* Never get larger than this */
+    font-size: 12px;
+  }
+}
+

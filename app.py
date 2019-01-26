@@ -9,6 +9,10 @@ app.debug = True
 def index_page():
     return render_template('index.html')
 
+@app.route('/v2')
+def index_pagev2():
+    return render_template('index2.html')
+
 
 @app.route('/contact/')
 def contact_page():

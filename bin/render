@@ -1,0 +1,19 @@
+python render.py
+
+git clone git@github.com:kartkand/personal-site.git
+
+mv *.html personal-site/
+
+cp -R static/ personal-site/static/
+
+cd personal-site/
+
+git add .
+
+git commit -m "updated templates"
+
+git push
+
+cd ..
+
+rm -rf personal-site
