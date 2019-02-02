@@ -34,11 +34,6 @@ def show_static_pdf():
     path = join(dirname(realpath(__file__)), 'static/resume.pdf')
     return send_file(path, attachment_filename='resume.pdf')
 
-
-# @app.route('/resume/')
-# def resume_page():
-#     return render_template('resume.html')
-
 @app.route('/resume/')
 def resume_page():
     path = join(dirname(realpath(__file__)), 'static/resume.pdf')

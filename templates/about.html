@@ -1,158 +1,104 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>Kartikeya Kandula</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/png" href="/static/img/logo.png">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Lightroom Gallery</title>
-  <link href="/static/css/custom.css" rel="stylesheet">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-</head>
+<html lang="en" style="-webkit-overflow-scrolling: touch;">
 
-<body>
 {% include 'architecture/header.html' %}
 
-<!-- <div class="hero-image" style="background-image: url(/static/img/seattle.jpg); background-position: bottom center; height: 50%;">
-  <div class="hero-text" style="width: 100%; top: 50%; background-color: rgba(0, 0, 0, 0.7);">
-    <h1 style="letter-spacing: 0.2em; font-weight: bold;">ABOUT</h1>
-  </div>
-</div> -->
+<body>
 
-<div class="hero" style="height: 40%; overflow: hidden;">
-  <img src="/static/img/seattle.jpg" class="hero-image" />
-  <div class="hero-text" style="width: 100%; top: 50%; background-color: rgba(0, 0, 0, 0.7);">
-    <h1 style="letter-spacing: 0.2em; font-weight: bold; font-size: 2em;">ABOUT</h1>
-  </div>
-</div>
+{% include 'architecture/navbar.html' %}
 
-<div id="code" style ="border-radius: 5px; width:75%; margin: auto; padding-top:15px; font-size:30px; background: #ccc; font-family: 'Monaco', 'Courier New';text-align: left; font-size:13px; color: #fff; margin-top: 3%;">
-    <div id="console" style ="width:100%; padding: 40px; margin:0 auto; background: #383737;">
-      &gt; Kart.origin<br/>
-      <span class="answer">&nbsp;&nbsp;=&gt; "Okemos, MI"<br/><br/></span>
-      &gt; Kart.education<br/>
-      <span class="answer">&nbsp;&nbsp;=&gt; "University of Michigan"<br/><br/></span>
-      &gt; Kart.major<br/>
-      <span class="answer">&nbsp;&nbsp;=&gt; "Computer Science Engineering"<br/><br/></span>
-      &gt; Kart.Graduation<br/>
-      <span class="answer">&nbsp;&nbsp;=&gt; "May 2019"<br/><br/></span>
-      &gt; Kart.interests<br/>
-      <span class="answer">&nbsp;&nbsp;=&gt; ["tennis", "code", "photography", "travel", "concerts", "basketball", "food"]<br/><br/></span>
-      &gt; Kart.workExperience.latest<br/>
-      <span class="answer">&nbsp;&nbsp;=&gt; Latest Work Experience<br/>
-                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; company: "JPMorgan Chase"<br/>
-                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; role: "Technology Analyst Intern"<br/>
-                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; startDate: "June 2018"<br/>
-                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; endDate: "August 2018"<br/>
-      <br/></span>
-      &gt; Kart.resume<br/>
-      <span class="answer">&nbsp;&nbsp;=&gt; "<a target="_blank" href="/resume.pdf">resume.pdf</a>"<br/><br/></span>
-      &gt; Kart.email<br/>
-      <span class="answer">&nbsp;&nbsp;=&gt; "<a target="_blank" href="mailto:kandula.kartikeya@gmail.com">kandula.kartikeya@gmail.com</a>"<br/><br/></span>
+<section class="hero is-medium" id = "intro-section">
+  <div class="hero-body" style="padding-top: 5rem; padding-bottom: 1rem">
+
+    <div class="columns">
+      <div class="column is-8 is-offset-2" style="text-align: center;">
+        <h1><strong>"How would you describe yourself?"</strong></h1>
+        <h1>Terrible question, but here are some of my favorite things.</h1>
+
+
+      </div>
     </div>
-</div>
 
 
 
-<div class="container" style="margin-top: 15%;">
-  <div class="row">
-    <div class="col-sm-3">
-      <h3 class="section_header">What I'm Reading</h3>
-    </div>
-    <div class="col-md-8 col-sm-offset-1">
-      <p><a class="reading_list" href="https://mises.org/library/markets-and-information-problem">Markets and the Information Problem</a></p>
-    </div>
   </div>
+</section>
 
-  <div class="row">
-    <div class="col-md-8 col-sm-offset-4">
-      <p><a class="reading_list" href="https://waitbutwhy.com/2017/03/elon-musk-post-series.html">The Elon Musk Post Series</a></p>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-8 col-sm-offset-4">
-      <p><a class="reading_list" href="https://waitbutwhy.com/2015/01/artificial-intelligence-revolution-1.html">The AI Revolution: The Road to Superintelligence</a></p>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-8 col-sm-offset-4">
-      <p><a class="reading_list" href="https://github.com/Droogans/unmaintainable-code">How To Write Unmaintainable Code</a></p>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-8 col-sm-offset-4">
-      <p><a class="reading_list" href="https://www.nytimes.com/2006/08/20/sports/playmagazine/20federer.html">Roger Federer as Religious Experience</a></p>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-8 col-sm-offset-4">
-      <p><a class="reading_list" href="https://www.wsj.com/articles/a-rebuttal-to-jason-gay-1475245637">Michigan’s Formal Rebuttal to Jason Gay</a></p>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-8 col-sm-offset-4">
-      <p><a class="reading_list" href="https://www.esquire.com/sports/a5151/the-string-theory-david-foster-wallace/">The String Theory</a></p>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-8 col-sm-offset-4">
-      <p><a class="reading_list" href="https://distill.pub/2017/aia/">Using Artiﬁcial Intelligence to Augment Human Intelligence</a></p>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-8 col-sm-offset-4">
-      <p><a class="reading_list" href="https://spectrum.ieee.org/automaton/robotics/artificial-intelligence/facebook-ai-director-yann-lecun-on-deep-learning">Facebook AI Director Yann LeCun on His Quest to Unleash Deep Learning and Make Machines Smarter</a></p>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-8 col-sm-offset-4">
-      <p><a class="reading_list" href="http://www.espn.com/espn/feature/story/_/page/Michael-Jordan/michael-jordan-not-left-building?src=longreads">Michael Jordan Has Not Left The Building</a></p>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-8 col-sm-offset-4">
-      <p><a class="reading_list" href="https://www.newyorker.com/magazine/2016/08/29/damon-baehrel-the-most-exclusive-restaurant-in-america?src=longreads">The Most Exclusive Restaurant in America</a></p>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-8 col-sm-offset-4">
-      <p><a class="reading_list" href="https://www.gq.com/story/colin-kaepernick-will-not-be-silenced">Colin Kaepernick Will Not Be Silenced</a></p>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-8 col-sm-offset-4">
-      <p><a class="reading_list" href="https://www.rollingstone.com/music/news/the-passion-of-kanye-west-20060209">The Passion of Kanye West</a></p>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-8 col-sm-offset-4">
-      <p><a class="reading_list" href="https://www.gq.com/story/how-chance-the-rappers-life-became-perfect">How Chance the Rapper’s Life Became Perfect</a></p>
-    </div>
-  </div>
-
-</div>
-
+<section id="photos">
+  <a href="https://www.youtube.com/watch?v=dCjw0Unm8OY" target="_blank"><img src="./static/img/favorites/federer2009AO.jpg" alt=""></a>
+  <a href="http://fortune.com/2012/05/13/the-toughest-guy-on-wall-street-fortune-2006/" target="_blank"><img src="./static/img/favorites/jpm.jpg" alt=""></a>
+  <a href="https://www.bloomberg.com/graphics/2015-paul-ford-what-is-code/" target="_blank"><img src="./static/img/favorites/WhatIsCode.jpg" alt=""></a>
+  <a href="https://www.dailymotion.com/video/x4c7hf" target="_blank"><img src="./static/img/favorites/HeyMama.jpg" alt=""></a>
+  <a href="https://www.youtube.com/watch?v=1n4rqMnxaig" target="_blank"><img src="./static/img/favorites/poole.jpg" alt=""></a>
+  <a href="https://strategicreasoning.org/" target="_blank"><img src="./static/img/favorites/srg.png" alt=""></a>
+  <a href="https://www.nytimes.com/2018/04/05/opinion/election-voting-machine-hacking-russians.html" target="_blank"><img src="./static/img/favorites/halderman.jpg" alt=""></a>
+  <a href="https://www.youtube.com/watch?v=0cHRmQWUCl4" target="_blank"><img src="./static/img/favorites/daenarys.jpg" alt=""></a>
+  <a href="https://qz.com/india/1469711/why-india-born-pichai-nadella-nooyi-rule-us-business/" target="_blank"><img src="./static/img/favorites/indianmanagers.jpg" alt=""></a>
+  <a href="https://vsco.co/kartikeyakandula/" target="_blank"><img src="./static/img/favorites/parthenon.jpg" alt=""></a>
+  <a href="https://www.buzzfeednews.com/article/mathonan/searching-for-google-ceo-sundar-pichai-the-most-powerful-tec#.td132Pbeg" target="_blank"><img src="./static/img/favorites/pichai.jpg" alt=""></a>
+  <a href="https://www.youtube.com/watch?v=Hp9JzkMHbF8" target="_blank"><img src="./static/img/favorites/federer17AO.jpg" alt=""></a>
+  <a href="https://www.lansingstatejournal.com/story/sports/high-school/2015/10/15/okemos-tennis-doubles-duo-has-impressive-resume/73964868/" target="_blank"><img src="./static/img/favorites/doubles.jpg" alt=""></a>
+  <a href="https://visualgo.net/en" target="_blank"><img src="./static/img/favorites/visualgo.png" alt=""></a>
+  <a href="http://frankocean.tumblr.com/post/26473798723" target="_blank"><img src="./static/img/favorites/FrankOceanLetter.png" alt=""></a>
+  <a href="https://www.nytimes.com/2006/08/20/sports/playmagazine/20federer.html" target="_blank"><img src="./static/img/favorites/federer.jpg" alt=""></a>
+  <a href="https://waitbutwhy.com/2015/01/artificial-intelligence-revolution-1.html" target="_blank"><img src="./static/img/favorites/AIrevolution.png" alt=""></a>
+  <a href="https://www.instagram.com/p/BYTczozlxKr/" target="_blank"><img src="./static/img/favorites/senatori.jpg" alt=""></a>
+  <a href="https://github.com/Droogans/unmaintainable-code" target="_blank"><img src="./static/img/favorites/code.jpg" alt=""></a>
+  <a href="https://www.youtube.com/watch?v=9hccvsQIEZ8" target="_blank"><img src="./static/img/favorites/logictyson.jpg" alt=""></a>
+  <a href="https://pitchfork.com/features/overtones/9725-the-coldest-story-ever-told-the-influence-of-kanye-wests-808s-heartbreak/" target="_blank"><img src="./static/img/favorites/808s.jpg" alt=""></a>
+  <a href="https://flypaper.soundfly.com/produce/the-musical-and-sociopolitical-evolution-of-kanyes-use-of-soul-music-samples/" target="_blank"><img src="./static/img/favorites/kanye.jpg" alt=""></a>
+  <a href="https://www.gq.com/story/colin-kaepernick-will-not-be-silenced" target="_blank"><img src="./static/img/favorites/kaep.jpg" alt=""></a>
+  <a href="http://www.espn.com/espn/feature/story/_/page/Michael-Jordan/michael-jordan-not-left-building?src=longreads" target="_blank"><img src="./static/img/favorites/jordan.jpg" alt=""></a>
+  <a href="https://www.esquire.com/sports/a5151/the-string-theory-david-foster-wallace/" target="_blank"><img src="./static/img/favorites/stringtheory.jpg" alt=""></a>
+  <a href="https://www.instagram.com/brandonwoelfel/?hl=en" target="_blank"><img src="./static/img/favorites/woelfel.jpg" alt=""></a>
+  <a href="https://mpowered.umich.edu/team" target="_blank"><img src="./static/img/favorites/mpowered.jpg" alt=""></a>
+  <a href="http://nymag.com/intelligencer/2018/06/where-is-barack-obama.html?gtm=top&gtm=top" target="_blank"><img src="./static/img/favorites/obama.jpg" alt=""></a>
+  <a href="https://www.wsj.com/articles/a-rebuttal-to-jason-gay-1475245637" target="_blank"><img src="./static/img/favorites/umich.jpg" alt=""></a>
+  <a href="https://www.youtube.com/watch?v=vNy-CnyEMoA" target="_blank"><img src="./static/img/favorites/flume.jpg" alt=""></a>
+  <a href="https://www.gq.com/story/how-chance-the-rappers-life-became-perfect" target="_blank"><img src="./static/img/favorites/chance.jpg" alt=""></a>
+  <a href="https://www.cnet.com/news/this-is-not-your-fathers-microsoft/" target="_blank"><img src="./static/img/favorites/microsoftlogo.png" alt=""></a>
+  <a href="http://www.elometer.net/" target="_blank"><img src="./static/img/favorites/chess.jpg" alt=""></a>
+  <a href="https://open.spotify.com/user/21iynn2hcjg5teemfebjwq7zy?si=SxDjJPXbQ1CyKSBv8c1MNA" target="_blank"><img src="./static/img/favorites/spotify.jpg" alt=""></a>
+  <a href="http://www0.cs.ucl.ac.uk/staff/d.silver/web/Teaching.html" target="_blank"><img src="./static/img/favorites/RL.png" alt=""></a>
+  <a href="https://www.scientificamerican.com/article/game-theory-calls-cooperation-into-question1/" target="_blank"><img src="./static/img/favorites/gametheory.jpg" alt=""></a>
+  <a href="https://www.youtube.com/watch?v=b5RK8ED2CUY" target="_blank"><img src="./static/img/favorites/burke.jpg" alt=""></a>
+</section>
 
 
 
 
 {% include 'architecture/footer.html' %}
+
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+
+  // Get all "navbar-burger" elements
+  const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+  // Check if there are any navbar burgers
+  if ($navbarBurgers.length > 0) {
+
+    // Add a click event on each of them
+    $navbarBurgers.forEach( el => {
+      el.addEventListener('click', () => {
+
+        // Get the target from the "data-target" attribute
+        const target = el.dataset.target;
+        const $target = document.getElementById(target);
+
+        // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+        el.classList.toggle('is-active');
+        $target.classList.toggle('is-active');
+
+      });
+    });
+  }
+
+});
+</script>
 
 
 </body>

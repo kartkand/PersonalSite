@@ -5,15 +5,7 @@
 
 <body>
 
-<!--   {% include 'architecture/navbar.html' %} -->
-
-
-
-
-
-
-
-
+{% include 'architecture/navbar.html' %}
 
 <section class="hero is-medium" id = "intro-section">
   <div class="hero-body" style="padding-top: 5rem; padding-bottom: 1rem">
@@ -22,9 +14,6 @@
         <img src="./static/img/name.svg">
       </div>
     </div>
-
-
-
     <div class="columns">
       <div class="column is-half is-offset-one-quarter">
         <h1><strong>Hello!</strong> 👋</h1>
@@ -42,18 +31,11 @@
         </h1>
       </div>
     </div>
-
   </div>
 </section>
 
-
-
-
-
 <section class="hero is-medium dark-section">
-
   <div style="margin-top: -10px;"><img class="svgback" src="./static/img/background.svg"></div>
-
   <div class="hero-body" style="padding-top: 0;">
     <div class="columns">
       <div class="dark-panel column is-8 is-offset-2">
@@ -123,7 +105,6 @@
       </div>
     </div> 
   </div>
-
   <div class="hero-body">
     <div class="columns">
       <div class="dark-panel column is-8 is-offset-2">
@@ -193,7 +174,7 @@
           </div>
 
           <div class="project-img left">
-            <img src="./static/img/sfpd.png" alt="" />
+            <img src="./static/img/d3.png" alt="" />
           </div>
         </div>
 
@@ -253,21 +234,15 @@
             <li> Balsamiq</li>
           </ul>
         </div>
-
-
-
       </div>
     </div> 
   </div>
-
 </section>
 
 {% include 'architecture/footer.html' %}
 
 
 
-
-<script type="text/javascript" src="./static/js/typewrite.js"></script>
 <script>
   const tabs = document.querySelector('.tabs');
 
@@ -296,8 +271,34 @@
 
 </script>
 
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+
+  // Get all "navbar-burger" elements
+  const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+  // Check if there are any navbar burgers
+  if ($navbarBurgers.length > 0) {
+
+    // Add a click event on each of them
+    $navbarBurgers.forEach( el => {
+      el.addEventListener('click', () => {
+
+        // Get the target from the "data-target" attribute
+        const target = el.dataset.target;
+        const $target = document.getElementById(target);
+
+        // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+        el.classList.toggle('is-active');
+        $target.classList.toggle('is-active');
+
+      });
+    });
+  }
+
+});
+</script>
 
 
 </body>
-
 </html>

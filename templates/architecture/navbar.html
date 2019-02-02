@@ -1,26 +1,57 @@
-<nav class="navbar is-spaced">
+<nav class="navbar" role="navigation" aria-label="main navigation">
+<div class="navbar-brand">
+    <a class="navbar-item" href="/">
+        <h1 class="title is-1">Kartikeya Kandula</h1>
+<!--         <img src="./static/img/logo.png" alt=""></a> -->
+    </a>
+    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+    </a>
+</div>
+
+<div id="navbarBasicExample" class="navbar-menu">
+
+    <div class="navbar-end">
+        <a class="navbar-item right" href="/">Home</a>
+        <a class="navbar-item right" href="about/">About</a>
+        <a class="navbar-item right" href="resume/">Resume</a>
+    </div>
+</div>
+</nav>
+
+
+
+<!-- 
+
+<div class="nav-menu fixed-top">
     <div class="container">
-        <div class="navbar-brand">
-            <h1 class="title is-1 is-red"><a href="/" style="color: inherit;">Kickback</a></h1>
-        </div>
-        <div class="navbar-menu is-active">
-            <div class="navbar-end">
-                <div class="navbar-item">
-                    <a href="/dashboard" class = "is-red">Dashboard</a>
-                </div>
-                <div class="navbar-item">
-                    <a href="/explore" class = "is-red">Explore</a>
-                </div>
-                {% if loggedin == 0 %}
-                <div class="navbar-item">
-                    <a href="/signin/" class = "is-red">Sign In</a>
-                </div>
-                {% else %}
-                <div class="navbar-item">
-                    <a href="/signout/" class = "is-red">Sign Out</a>
-                </div>
-                {% endif %}
+        <div class="row">
+            <div class="col-md-12">
+                <nav class="navbar navbar-dark navbar-expand-lg">
+                    <a class="navbar-brand lrg-logo" href="http://designerjr.com/" style="display: block;"><img src="images/logo.svg" class="img-fluid img-fluidse" alt="logo" style="border-radius: 0px;width:40px;-webkit-transition: transform 1.5s;
+                         transition: transform 1.5s;"></a>
+
+                    <div class="collapse navbar-collapse" id="navbar">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item"> <a class="nav-link active" href="#home">START <span class="sr-only">(current)</span></a> </li>
+                            <li class="nav-item"> <a class="nav-link" href="#features">WORK FOR</a> </li>
+                            <li class="nav-item"> <a class="nav-link" href="#awards">AWARDS</a> </li>
+                            <li class="nav-item"> <a class="nav-link" href="#projects">PROJECTS</a></li>
+                            <li class="nav-item"> <a class="nav-link" href="#contact">CONTACT</a> </li>
+                            <li class="nav-item"><a href="#modal-1" class="btn btn-outline-light my-3 my-sm-0 ml-lg-3 cd-modal-trigger">CV</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="menu2" style="opacity: 1;">
+                        <div class="container2" style="opacity: 1;">
+                            <div class="toggle2" style="opacity: 1;"></div>
+                        </div><span class="yeargo hidden"><a href="#awards">AWARDS</a></span><span class="yeargo hidden"><a href="#projects">PROJECTS</a></span><span class="yeargo hidden"><a href="#contact">CONTACT</a></span>
+                    </div>
+
+                </nav>
             </div>
         </div>
     </div>
-</nav>
+</div> -->

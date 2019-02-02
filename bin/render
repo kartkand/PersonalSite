@@ -1,6 +1,6 @@
 python render.py
 
-git clone git@github.com:kartkand/personal-site.git
+git clone git@github.com:kartkand/kartkand.github.io.git
 
 mv *.html personal-site/
 
