@@ -17,3 +17,9 @@ git push
 cd ..
 
 rm -rf kartkand.github.io
+
+git add .
+
+git commit -m "idrk"
+
+git push
