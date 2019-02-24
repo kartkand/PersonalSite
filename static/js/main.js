@@ -14,8 +14,6 @@ function init(){
         _$loupeContainer = $("#loupeContainer"),
         _$loupeBackground = $("#loupeContainer div.background"),
         _$loupeImageContainer = $("#loupeContainer div.image-container"),
-        _$loupeInfoContainer = $("#loupeContainer div.info-container"),
-        _$loupeMeta = $("#loupeMeta"),
         _$buttonPrev = $("#buttonPrev"),
         _$hotspotPrevLoupe = $("#hotspotPrevLoupe"),
         _$buttonPrevSideLoupe = $("#buttonPrevSideLoupe"),
@@ -85,7 +83,7 @@ function init(){
             LR.images[i].caption = "";
         }
         // Create the individual thumbnail partial
-        LR.images[i].$thumbnail = $('<div class="thumbnail not-loaded" data-large-img="/static/images/large/'+ LR.images[i].exportFilename +'.jpg" data-id="ID'+ LR.images[i].id +'" data-title="' + LR.images[i].title + '" data-caption="' + LR.images[i].caption + '" data-native-width="' + LR.images[i].largeWidth + '" data-native-height="' + LR.images[i].largeHeight + '"><img class="thumb-img" src="" /></div>');
+        LR.images[i].$thumbnail = $('<div class="thumbnail not-loaded" data-large-img="./static/images/large/'+ LR.images[i].exportFilename +'.jpg" data-id="ID'+ LR.images[i].id +'" data-title="' + LR.images[i].title + '" data-caption="' + LR.images[i].caption + '" data-native-width="' + LR.images[i].largeWidth + '" data-native-height="' + LR.images[i].largeHeight + '"><img class="thumb-img" src="" /></div>');
         LR.images[i].$thumbnail.data("index", i);
         // Isolate the actual thumbnail image
         LR.images[i].$thumbnailImg = $(LR.images[i].$thumbnail.find("img")[0]);
@@ -133,7 +131,7 @@ function init(){
             );
             LR.images[i].$thumbnailImg.attr(
                 "src",
-                "/static/images/thumbnails/" + LR.images[i].exportFilename + ".jpg"
+                "./static/images/thumbnails/" + LR.images[i].exportFilename + ".jpg"
             );
             _lastLoadedThumbIndex = LR.images[i].index;
         }
@@ -224,7 +222,7 @@ function init(){
                 );
                LR.images[i].$thumbnailImg.attr(
                 "src",
-                "/static/images/thumbnails/" + LR.images[i].exportFilename + ".jpg"
+                "./static/images/thumbnails/" + LR.images[i].exportFilename + ".jpg"
                 );
                 _lastLoadedThumbIndex = LR.images[i].index; 
             }
@@ -250,12 +248,7 @@ function init(){
     }
 
     function checkForSpace(){
-        if((_$w.scrollTop() + _viewportHeight) == _$body.height() && _thumbsToLoad == 0 && _lastLoadedThumbIndex < LR.images.length - 1){
-            loadMoreThumbnails(_lastLoadedThumbIndex + 1, 1);
-        }
-        else if(_$body.height() < _viewportHeight && _thumbsToLoad == 0){
-            loadMoreThumbnails(_lastLoadedThumbIndex + 1, 1);
-        }
+        loadMoreThumbnails(_lastLoadedThumbIndex + 1, 1);
     }
 
     function loadMoreThumbnails(startIndex, numRows) {
@@ -279,7 +272,7 @@ function init(){
                 );
                 LR.images[i].$thumbnailImg.attr(
                     "src",
-                    "/static/images/thumbnails/" + LR.images[i].exportFilename + ".jpg"
+                    "./static/images/thumbnails/" + LR.images[i].exportFilename + ".jpg"
                 );
                 _lastLoadedThumbIndex = LR.images[i].index;
             }
@@ -301,7 +294,7 @@ function init(){
                 );
                 LR.images[i].$thumbnailImg.attr(
                     "src",
-                    "/static/images/thumbnails/" + LR.images[i].exportFilename + ".jpg"
+                    "./static/images/thumbnails/" + LR.images[i].exportFilename + ".jpg"
                 );
                 _lastLoadedThumbIndex = LR.images[i].index;
             }
@@ -347,13 +340,17 @@ function init(){
 
     _$loupeContainer.fadeOut(0);
     _$loupeImageContainer.fadeOut(0);
-    _$loupeInfoContainer.fadeOut(0);
     _$buttonClose.fadeOut(0);
     _$loupeBackground.css("opacity", 0);
     _$buttonClose.on(
         "click",
         closeLoupeView
     );
+    $('body').keydown(function(e) {
+        if (e.keyCode == 27) {
+            closeLoupeView(e);
+        }
+    });
 
     _$buttonPrev.on(
         "click",
@@ -400,7 +397,7 @@ function init(){
     }
 
     function openLoupeView(snap) {
-        document.getElementById("navbarID").style.display = "none";
+        $('.navbar').hide();
         _loupeIsTransitioning = true;
         setCounts();
         _$loupeContainer.fadeIn(0);
@@ -409,7 +406,8 @@ function init(){
                 "width": _$targetThumb.width() + "px",
                 "height": _$targetThumb.height() + "px",
                 "top": (_$targetThumb.offset().top - $(window).scrollTop()) + "px",
-                "left": _$targetThumb.offset().left + "px"
+                "left": _$targetThumb.offset().left + "px",
+                "background-color": "#ced3e3"
             }
         );
         _$loupeContainer.css("display", "block");
@@ -423,7 +421,8 @@ function init(){
                 "height": "100%",
                 "top": "0px",
                 "left": "0px",
-                "opacity": 1
+                "opacity": 1,
+                "background-color": "#ced3e3"
             },
             _targetTime,
             onLoupeBackgroundShown
@@ -440,7 +439,6 @@ function init(){
     }
 
     function showLoupeElements() {
-        _$loupeInfoContainer.fadeIn(350);
         _$buttonClose.fadeIn(350);
         _isOpen = true;
         showLoupeViewForThumbnail(_$targetThumb);
@@ -492,7 +490,6 @@ function init(){
         if($thumbnail.attr("data-caption") != "nil" && $thumbnail.attr("data-caption") != ""){
             _metadata += '<p class="caption">' + $thumbnail.attr("data-caption") + '</p>';
         }
-        _$loupeMeta.html(_metadata);
         if(_metadata == ""){
             _$loupeContainer.addClass("meta-empty");
         }
@@ -618,7 +615,7 @@ function init(){
     }
 
     function closeLoupeView(e) {
-        document.getElementById("navbarID").style.display = "block";
+        $('.navbar').show();
         e.preventDefault();
         e.stopPropagation();
         $(window).off(
@@ -626,7 +623,6 @@ function init(){
             onLoupeResize
         );
         _$loupeImageContainer.fadeOut(0);
-        _$loupeInfoContainer.fadeOut(0);
         _$buttonClose.fadeOut(0);
         _$loupeContainer.fadeOut(0);
         _$loupeImage.remove();
@@ -644,18 +640,6 @@ function init(){
 
     function unlockBody() {
         _$body.removeClass("loupe-active");
-    }
-
-    // Wire up the fullscreen stuff if we can
-    if(Modernizr.fullscreen){
-        $("#buttonFullscreen").on(
-            "click",
-            toggleFullScreen
-        );
-    }
-
-    if(window.hostIsLightroom){
-        $("#buttonFullscreen").css("display", "none");
     }
 
     // This was taken from Mozilla's MDN reference: https://developer.mozilla.org/en-US/docs/Web/Guide/API/DOM/Using_full_screen_mode#Browser_compatibility

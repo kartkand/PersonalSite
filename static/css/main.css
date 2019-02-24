@@ -3,6 +3,7 @@
 
 html {
   box-sizing: border-box;
+  -webkit-overflow-scrolling: touch;
 }
 
 *,
@@ -10,7 +11,6 @@ html {
 *:after {
   box-sizing: inherit;
 }
-
 
 html,
 body {
@@ -539,14 +539,6 @@ a.btn-social, .btn-social {
 
 
 
-
-
-
-
-
-
-
-
 #photos {
    /* Prevent vertical gaps */
    line-height: 0;
@@ -606,7 +598,6 @@ a.btn-social, .btn-social {
   margin: 0px 5%;
 }
 
-
 .navbar-burger {
   margin-top: 37px;
   margin-bottom: auto;
@@ -632,4 +623,297 @@ a.btn-social, .btn-social {
     color: #7c8bb6;
     border: 2px solid #9da8c8;
   }
+}
+
+
+/*Image Gallery*/
+body.loupe-active {
+    overflow: hidden;
+}
+#thumbnailContainer {
+    position: relative;
+    padding: 0px;
+    width: 100%;
+   -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    overflow: hidden;
+    font-size: 0;
+    padding-top: 5%;
+    margin-bottom: 5%;
+}
+div.thumbnails {
+    overflow: hidden;
+    margin: 0 auto;
+   -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    text-align: center;
+}
+div.thumbnail {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display:inline-table;
+   -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    cursor: pointer;
+
+   -webkit-transition: -webkit-box-shadow .03s ease-in;
+   -moz-transition: -moz-box-shadow .03s ease-in;
+   -ms-transition: box-shadow .03s ease-in;
+   -o-transition: box-shadow .03s ease-in;
+    transition: box-shadow .03s ease-in; 
+}
+div.thumbnail.not-loaded {
+    display: none;
+}
+div.thumbnail img {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    max-height: 100%;
+   -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    cursor: pointer;
+    border-style: solid;
+}
+#loupeContainer {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+   -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    z-index: 2;
+    font-size: 14px;
+    text-align: center;
+}
+#loupeContainer div.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+#loupeContainer div.image-container {
+    position: relative;
+    display: table;
+    width: 100%;
+    height: 100%;
+}
+#loupeContainer div.corners {
+    position: relative;
+    display: inline-block;
+}
+#loupeContainer div.image-container div.image {
+    display: table-cell;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+   -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    vertical-align: middle;
+    text-align: center;
+}
+#loupeContainer img {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    max-height: 100%;
+   -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+#loupeContainer div.lateral-nav-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 45px;
+    overflow: hidden;
+    text-align: center;
+}
+#loupeContainer ul.lateral-nav {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    line-height: 45px;
+}
+#loupeContainer div.side-navigation {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    padding: 45px 0px 100px 0px;
+   -moz-box-sizing: border-box;
+    box-sizing: border-box; 
+}
+#loupeContainer div.side-navigation div.hotspot {
+    position: relative;
+    width: 25%;
+    height: 100%;
+
+   -webkit-user-select: none;   
+   -moz-user-select: none;
+   -ms-user-select: none;
+   -o-user-select: none;
+    user-select: none;
+}
+#loupeContainer div.side-navigation div.hotspot.over {
+    cursor: pointer;
+}
+#hotspotPrevLoupe {
+    float: left;
+}
+#hotspotPrevLoupe.disabled {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 0;
+}
+#hotspotNextLoupe {
+    float: right;
+}
+#hotspotNextLoupe.disabled {
+    display: none;
+}
+#loupeContainer div.side-navigation div.button {
+    display: block;
+    width: 50px;
+    height: 50px;
+}
+#buttonPrevSideLoupe {
+    position: absolute;
+    top: 50%;
+    left: 0px;
+    -webkit-transition: all .2s ease-out;
+    -moz-transition: all .2s ease-out;
+    -ms-transition: all .2s ease-out;
+    -o-transition: all .2s ease-out;
+    transition: all .2s ease-out;
+    opacity: 0;
+}
+#hotspotPrevLoupe.over #buttonPrevSideLoupe {
+    opacity: 1;
+}
+#svgIconPrevSideLoupe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50px;
+    height: 50px;
+}
+#buttonNextSideLoupe {
+    position: absolute;
+    top: 50%;
+    right: 0px;
+    -webkit-transition: all .2s ease-out;
+    -moz-transition: all .2s ease-out;
+    -ms-transition: all .2s ease-out;
+    -o-transition: all .2s ease-out;
+    transition: all .2s ease-out;
+    opacity: 0;
+}
+#hotspotNextLoupe.over #buttonNextSideLoupe {
+    opacity: 1;
+}
+#svgIconNextSideLoupe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50px;
+    height: 50px;
+}
+#loupeContainer li {
+    display: block;
+    float: left;
+}
+#countCurrent,
+#countTotal {
+    font-weight: bold;
+}
+#buttonPrev {
+    position: relative;
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+   -webkit-user-select: none;   
+   -moz-user-select: none;
+   -ms-user-select: none;
+   -o-user-select: none;
+    user-select: none; 
+}
+#buttonPrev.disabled {
+    opacity: .5;
+    cursor: inherit;
+}
+#svgIconPrevLoupe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 45px;
+    height: 45px;
+}
+#buttonNext {
+    position: relative;
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+   -webkit-user-select: none;   
+   -moz-user-select: none;
+   -ms-user-select: none;
+   -o-user-select: none;
+    user-select: none;
+}
+#buttonNext.disabled {
+    opacity: .5;
+    cursor: inherit;
+}
+#svgIconNextLoupe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 45px;
+    height: 45px;
+}
+#loupeCloseButton {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+}
+#svgIconLoupeClose {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45px;
+    height: 45px;
+}
+#svgIconLoupeClose .shape-x{
+    fill-rule:evenodd;
+    clip-rule:evenodd;
+}
+.custom-colorable {
+    fill: #a0a0a0;
+}
+
+div.thumbnail:hover {
+   -moz-box-shadow: inset 0 0 100px rgba(0, 0, 0, .4);  
+   -webkit-box-shadow: inset 0 0 100px rgba(0, 0, 0, .4);   
+    box-shadow: inset 0 0 100px rgba(0, 0, 0, .4);
+
+   -webkit-transition: all .15s ease-out;
+   -moz-transition: all .15s ease-out;
+   -ms-transition: all .15s ease-out;
+   -o-transition: all .15s ease-out;
+    transition: all .15s ease-out;  
 }
