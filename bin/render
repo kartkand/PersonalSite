@@ -2,11 +2,11 @@ python render.py
 
 git clone git@github.com:kartkand/kartkand.github.io.git
 
-mv *.html personal-site/
+mv *.html kartkand.github.io/
 
-cp -R static/ personal-site/static/
+cp -R static/ kartkand.github.io/static/
 
-cd personal-site/
+cd kartkand.github.io/
 
 git add .
 
@@ -16,4 +16,4 @@ git push
 
 cd ..
 
-rm -rf personal-site
+rm -rf kartkand.github.io
