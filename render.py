@@ -9,6 +9,6 @@ if __name__ == "__main__":
         if filename.endswith(".html"):
             with app.app_context():
                 rendered_page = render_template(filename).encode('utf-8')
-                fh = open(filename, "w")
+                fh = open(filename, "wb")
                 fh.write(rendered_page)
                 fh.close()
