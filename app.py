@@ -11,12 +11,15 @@ def index_page():
 
 @app.route('/v2')
 def index_pagev2():
-    return render_template('index2.html')
+    return render_template('v2/index.html')
 
+@app.route('/v2/about')
+def about_pagev2():
+    return render_template('v2/about.html')
 
-@app.route('/contact/')
-def contact_page():
-    return render_template('contact.html')
+@app.route('/v2/photos')
+def photos_pagev2():
+    return render_template('v2/about.html')
 
 
 @app.route('/about/')
