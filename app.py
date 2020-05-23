@@ -9,27 +9,15 @@ app.debug = True
 def index_page():
     return render_template('index.html')
 
-@app.route('/v2')
-def index_pagev2():
-    return render_template('v2/index.html')
-
-@app.route('/v2/about')
-def about_pagev2():
-    return render_template('v2/about.html')
-
-@app.route('/v2/photos')
-def photos_pagev2():
-    return render_template('v2/about.html')
-
 
 @app.route('/about/')
 def about_page():
     return render_template('about.html')
 
 
-@app.route('/photos/')
-def photos_page():
-    return render_template('photos.html')
+@app.route('/work/')
+def work_page():
+    return render_template('work.html')
 
 
 @app.route('/resume.pdf')

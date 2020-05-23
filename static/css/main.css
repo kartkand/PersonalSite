@@ -5,53 +5,42 @@ html {
   box-sizing: border-box;
   -webkit-overflow-scrolling: touch;
 }
-
 *,
 *:before,
 *:after {
   box-sizing: inherit;
 }
-
 html,
 body {
   width: 100%;
   height: 100%;
 }
-
 /*standardized font*/
 html {
   /* Never get smaller than this */
   font-size: 8px;
 }
-
 @media (min-width:600px) {
   html {
     font-size: 9px;
   }
 }
-
 @media (min-width:800px) {
   html {
     font-size: 10px;
   }
 }
-
 @media (min-width:1000px) {
   html {
     /* Never get larger than this */
     font-size: 12px;
   }
 }
-
 body {
   overflow-x: hidden;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   font-family: "Source Sans Pro", sans-serif;
-  margin: 0;
-  color: #36363C;
-  font-size: 16px;
-  line-height: 1.5;
 }
 
 a {
@@ -61,46 +50,43 @@ a {
   text-decoration-skip-ink: auto;
   transition: color 0.25s ease;
 }
-
-p {
-  margin: 0;
-}
 h1 {
-  font-weight: 300;
   line-height: 1;
-  font-size: 5rem;
+  font-size: 4.5rem;
+}
+h2 {
+  line-height: 1;
+  font-size: 3.5rem;
+  font-weight: 700;
 }
 h3 {
-  line-height: 1.5;
-  font-size: 3rem;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  font-size: 2.5rem;
+}
+h4 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+p {
+  font-size: 20px;
 }
 
+
+.hero-body{
+  padding-bottom: 0 !important;
+}
 .is-purple {
   color: #7D57FE;
 }
 
-.light-section {
-  /*background-image: url('../img/background1.png');*/
-  background-repeat: repeat-y;
-  background-size: contain;
-  width: 100vw;
-  margin-top: 0;
-}
 
-
-
-
-/* social buttons footer */
-a.btn-social, .btn-social {
+/* font awesome buttons */
+a.btn-nav, .btn-nav {
     font-size: 20px;
     color: #9da8c8;
     text-align: center;
     width: 54px;
 }
-
-.btn-social .fa,.btn-social i {
+.btn-nav .fa,.btn-nav i {
     backface-visibility: hidden;
     moz-backface-visibility: hidden;
     ms-transform: scale(1);
@@ -111,7 +97,7 @@ a.btn-social, .btn-social {
     webkit-transform: scale(1);
     webkit-transition: all .25s;
 }
-.btn-social:hover .fa,.btn-social:focus .fa,.btn-social:hover i,.btn-social:focus i {
+.btn-nav:hover .fa, .btn-nav:hover i {
     ms-transform: scale(1.3);
     o-transform: scale(1.3);
     transform: scale(1.3);
@@ -122,7 +108,7 @@ a.btn-social, .btn-social {
 .highlight-link {
   text-decoration: none;
   display: inline-block;
-  padding: 0px 7px;
+  padding: 0px 4px;
   transition: all .2s ease-in-out;
   box-sizing: border-box;
   text-decoration: none;
@@ -132,6 +118,7 @@ a.btn-social, .btn-social {
   box-shadow: inset 0 -55px 0 0 #7D57FE;
   color: white;
 }
+
 .arrow-link {
   font-size: 2rem;
   -webkit-transition: all .15s ease-in-out;
@@ -145,10 +132,11 @@ a.btn-social, .btn-social {
   margin-left: 10px;
   content: "";
   color: #7D57FE;
-  font-family: "FontAwesome";
+  font-family: "Font Awesome 5 Free";
   font-size: 1.5rem;
   display: inline-block;
   vertical-align: middle;
+  font-weight: 900;
   -webkit-transition: all .15s ease-in-out;
 }
 .arrow-link:hover {
@@ -158,91 +146,49 @@ a.btn-social, .btn-social {
   transform: translateX(7px);
 }
 
-
 .footer-brand {
-  font-family: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", "Lucida Console", Monaco, monospace;
   font-size: 12px;
   color: #7D57FE;
 }
 
-.navbar {
-  height: 75px;
-  margin: 0px 5%;
+
+/*push footer to bottom*/
+.page-container {
+  position: relative;
+  min-height: 100vh;
 }
-
-.navbar-burger {
-  margin-top: 37px;
-  margin-bottom: auto;
-  right: 0;
-}
-
-.navbar-item {
-  margin-top: 30px;
-  font-size: 18px;
-  text-align: center;
-}
-
-.navbar-item.right {
-  color: #7c8bb6;
-  border: 2px solid transparent;
-  transition: 0.5s ease;
-
-}
-
-@media screen and (min-width: 1088px){
-  a.navbar-item.right:hover, a.navbar-item.right.is-active, .navbar-link:hover, .navbar-link.is-active {
-    background-color: transparent;
-    color: #7c8bb6;
-    border: 2px solid #9da8c8;
-  }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 @media (max-width: 768px) {
-  .left-bar {
-    display: none;
+  .page-content {
+    padding-bottom: 96px;
   }
-  .right-bar {
+}
+
+.footer {
+  width: 100%;
+  background-color: transparent;
+}
+.footer-content {
+  margin-bottom: 12px;
+}
+
+/*left social media bar and right nav bar*/
+@media (max-width: 768px) {
+  .social-bar {
     display: none;
   }
   .footer {
     display: block !important;
   }
 }
-
-
-.left-bar {
-    width: 40px;
-    position: fixed;
-    bottom: 0px;
-    left: 40px;
-    right: auto;
-    z-index: 10;
+.social-bar {
+  left: 40px;
+  right: auto;
+  width: 0px;
+  position: fixed;
+  bottom: 0px;
+  z-index: 10;
 }
-
-.right-bar {
-    width: 40px;
-    position: fixed;
-    bottom: 0px;
-    left: auto;
-    right: 40px;
-    z-index: 10;
-}
-
-.nav-list::after {
+.bar-list::after {
     content: "";
     display: block;
     width: 1px;
@@ -250,8 +196,7 @@ a.btn-social, .btn-social {
     background-color: rgb(168, 178, 209);
     margin: 0px auto;
 }
-
-.nav-list {
+.bar-list {
     display: flex;
     flex-direction: column;
     -webkit-box-align: center;
@@ -260,9 +205,83 @@ a.btn-social, .btn-social {
     margin: 0px;
     list-style: none;
 }
-
-.nav-element {
+.bar-element {
     padding: 10px;
 }
 
 
+/*navbar*/
+.navbar-burger {
+  width: 24px;
+  height: 16px;
+  margin: auto 16px auto auto;
+}
+.navbar-item {
+  font-size: 18px;
+  text-align: center;
+  padding: 0;
+}
+a.navbar-item:hover, a.navbar-item.is-active, .navbar-link:hover, .navbar-link.is-active {
+    background-color: transparent;
+    color: #7D57FE;
+}
+.navbar-burger span {
+  height: 3px;
+  width: 24px;
+  left: 0;
+}
+
+.navbar-brand .navbar-item {
+  font-size: 24px;
+  padding-left: 12px;
+}
+
+.navbar-burger span:nth-child(1) {
+    top: calc(50% - 8px);
+}
+.navbar-burger span:nth-child(2) {
+    top: calc(50% - 1px);
+}
+.navbar-burger span:nth-child(3) {
+    top: calc(50% + 6px);
+}
+
+.navbar-burger.is-active span:nth-child(1) {
+    -webkit-transform: translateY(5px) rotate(45deg);
+    transform: translateY(7px) rotate(45deg);
+}
+.navbar-burger.is-active span:nth-child(2) {
+    opacity: 0;
+}
+.navbar-burger.is-active span:nth-child(3) {
+    -webkit-transform: translateY(-5px) rotate(-45deg);
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+
+@media (min-width: 769px) and (max-width: 1087px) {
+  .navbar-brand {
+    margin-left: 16.66667%;
+  }
+}
+
+@media (min-width: 1088px) {
+  .navbar {
+    justify-content: center;
+  }
+  .navbar-brand {
+    position: absolute;
+  }
+  .navbar-start {
+    margin-left: 16.66667%;
+  }
+  .navbar-end {
+    margin-right: 16.66667%;
+  }
+  .hero-body {
+    padding: 0;
+  }
+  .column {
+    padding: 0;
+  }
+}

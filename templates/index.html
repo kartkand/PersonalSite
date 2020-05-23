@@ -5,34 +5,61 @@
 
 <body>
 
+<div class="page-container">
 
-<div orientation="right" class="right-bar"><ul class="nav-list">
-	<li class="nav-element"><a href="./" class="btn-social"><i class="fas fa-home"></i></a></li>
-	<li class="nav-element"><a href="./about" class="btn-social"><i class="fas fa-user"></i></a></li>
-    <li class="nav-element"><a href="https://github.com/kartkand" class="btn-social"><i class="fas fa-briefcase"></i></a></li>
-    <li class="nav-element"><a href="./resume.pdf" target="_blank" class="btn-social"><i class="fa fa-file-alt"></i></a></li>
-</ul></div>
+{% include 'architecture/navbar.html' %}
 
-<section class="hero is-medium light-section" id = "intro-section">
-	<div class="hero-body" style="padding-top: 4rem; padding-bottom: 0;">
+<section class="hero is-medium page-content">
+	<div class="hero-body" style="padding-top: 5rem;">
 	    <div class="columns">
 	    	<div class="column is-two-thirds is-offset-2">
 		        <h1><strong class="is-purple">Kartikeya Kandula</strong></h1>
 		        <h1><strong>Ph.D. @ Princeton</strong></h1>
-		        <h3>Hello 👋!</h3>
-		        <h3>I'm <strong>Kart</strong>, a first year computer science Ph.D. student in <a class="highlight-link" href="https://citp.princeton.edu/" target="_blank">CITP</a> at Princeton University. My research interests include tech policy, information privacy, and algorithmic bias.</h3>
-		        <h3>I received my B.S.E and M.S.E in computer science engineering from the <a class="highlight-link" href="https://www.youtube.com/watch?v=1n4rqMnxaig" target="_blank">University of Michigan</a>. Previously, I have worked as a Software Engineering Intern at Microsoft and as a Technology Analyst Intern at J.P. Morgan.</h3>
+            <br>
+		        <h3>Welcome to my crib. I'm Kart, a first year Ph.D. student in <a class="highlight-link" href="https://citp.princeton.edu/" target="_blank">CITP</a> at Princeton. My research interests include tech policy, information privacy, and algorithmic bias.</h3>
+            <br>
+		        <h3>I received my B.S.E and M.S.E in computer science engineering from THE <a class="highlight-link" href="https://www.youtube.com/watch?v=1n4rqMnxaig" target="_blank">University of Michigan</a>. I've also interned at Microsoft and J.P. Morgan.</h3>
+            <br>
+            <h3>I love getting to meet new people so please hit me up!</h3>
 
-		        <p style="margin-top: 2.5rem; margin-bottom: 2.5rem;"><a href="https://www.instagram.com/kartikeyakandula/" class="arrow-link" target="_blank">See my life</a></p>
+		        <p style="margin-top: 2.5rem;"><a href="https://www.instagram.com/kartikeyakandula/" class="arrow-link" target="_blank">Check out my life</a></p>
 		    </div>
 	    </div>
 	</div>
-
 </section>
-
 
 {% include 'architecture/footer.html' %}
 
+</div>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+
+  // Get all "navbar-burger" elements
+  const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+  // Check if there are any navbar burgers
+  if ($navbarBurgers.length > 0) {
+
+    // Add a click event on each of them
+    $navbarBurgers.forEach( el => {
+      el.addEventListener('click', () => {
+
+        // Get the target from the "data-target" attribute
+        const target = el.dataset.target;
+        const $target = document.getElementById(target);
+
+        // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+        el.classList.toggle('is-active');
+        $target.classList.toggle('is-active');
+
+      });
+    });
+  }
+
+});
+</script>
 
 </body>
 </html>
